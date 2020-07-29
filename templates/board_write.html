@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>DeepFake 판별 시스템</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/upload.css" />
+    <link rel="stylesheet" href="../static/css/result.css" />
+    <link rel="stylesheet" href="../static/css/mypage.css" />
+    <link rel="stylesheet" href="../static/css/board_write.css" />
+  </head>
+
+  <body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header-wrapper">
+        <div id="header" class="container">
+          <!-- Logo -->
+          <h1 id="logo"><a href="/">HOME</a></h1>
+
+          <!-- Nav -->
+          <nav id="nav"></nav>
+        </div>
+      </div>
+      <!-- Main -->
+      <div class="wrapper" style="padding-bottom: 10px;">
+        <!-- Content -->
+        <article id="content">
+          <header>
+            <h2>게시판</h2>
+          </header>
+        </article>
+
+        <div class="boxGroup">
+          <div class="write_box">
+            <form id="writeform" name="writeform" method="POST" action="">
+              <li>
+                <label>제목</label>
+                <input type="text" name="title" />
+              </li>
+              <li>
+                <label>글쓴이</label>
+                <label id="id_label">{{session['id']}}</label>
+              </li>
+              <li>
+                <label>내용</label>
+                <textarea name="content" id="content_box"></textarea>
+              </li>
+              <div class="submit">
+                <a href="#" class="edit_btn" onclick="to_ajax()">저장</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer-wrapper">
+        <div id="copyright" class="container">
+          <ul class="menu">
+            <li>&copy; COPYRIGHT 2020 가짜를 찾아조. All RIGHT RESERVED.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.dropotron.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#nav").load("/nav");
+      });
+    </script>
+    <script>
+      function to_ajax() {
+        var queryString = $("form[name=writeform]").serialize();
+        $.ajax({
+          type: "post",
+          url: "/write",
+          data: queryString,
+          dataType: "json",
+          success: function(res) {
+            if (res.status == "fail") {
+              alert("제목이나 내용은 비워둘 수 없습니다.");
+            } else {
+              alert("저장이 완료되었습니다.");
+              window.location.href = "/list";
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

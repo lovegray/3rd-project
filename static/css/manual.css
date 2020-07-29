@@ -1,0 +1,34 @@
+#step{
+    padding : 20px;
+    background-color: #8AA0B3;
+    color : white;
+    width : 100px;
+    height : 40px;
+    border-radius: 0.35em;
+    font-size: 24px;
+}
+
+#ment{
+    font-size: 24px;
+}
+
+img{
+    margin-top: 50px;
+    margin-bottom: 160px;
+    width: 84%;
+}
+
+@media screen and (max-width : 361px){
+    #step{
+        font-size : 18px;
+        padding : 10px;
+    }
+    #ment{
+        font-size: 20px;
+        line-height: 2;
+    }
+    img{
+        margin-bottom : 65px;
+        width : 95%;
+    }
+}

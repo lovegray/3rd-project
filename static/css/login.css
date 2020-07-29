@@ -1,0 +1,148 @@
+.formhead {
+  margin-top: 30px;
+}
+
+.formhead h1 {
+  font-size: 40px;
+}
+
+#loginform {
+  margin-top: 37px;
+}
+
+#loginform li {
+  border-radius: 0.3em;
+  list-style: none;
+  margin-bottom: 49px;
+  background-color: rgba(200, 200, 200, 0.2);
+  position: relative;
+  width: 60%;
+  height: 73px;
+  display: inline-block;
+}
+
+#loginform li input[type="text"] {
+  padding: 0.5em 2em 0.5em 1em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 23px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+
+#loginform li input[type="password"] {
+  padding: 0.5em 2em 0.5em 1em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 23px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: auto;
+  height: 100%;
+}
+
+#loginform li input[type="text"]:hover {
+  color: #8aa0b3;
+}
+
+#loginform li input[type="password"]:hover {
+  color: #8aa0b3;
+}
+
+
+#loginform li > i {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.submit {
+  margin-top: 5px;
+}
+
+.submit h4 a {
+  float: right;
+  font-size: 22px;
+  color: #999;
+  font-weight: 400;
+  margin-top: 22px;
+  margin-right: 282px;
+  border-bottom: none;
+}
+
+.submit h4 a:hover {
+  color: #8aa0b3;
+}
+
+#join_button {
+  float: left;
+  margin-left: 281px;
+  margin-right: 0;
+}
+/*************************/
+
+
+.login_btn {
+  color: #fff;
+  font-weight: 900;
+  width: 245px;
+  font-size: 23px;
+  background: #8aa0b3;
+  border: 2px;
+  height: 71px;
+  -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  display: inline-block;
+  border-radius: 0.35em;
+  padding: 0.8em 2em 0.8em 2em;
+  cursor: pointer;
+  outline: 0;
+}
+
+.login_btn:hover {
+  background: #fff;
+  color: #8aa0b3;
+  border: 2px;
+  }
+
+@media (max-width: 600px) {
+  .formbox {
+    height: 527px;
+  }
+
+  #loginform {
+    width: 300px !important;
+  }
+  #loginform li {
+    margin-bottom: 35px;
+  }
+
+  #loginform li input[type="text"],
+  #loginform li input[type="password"] {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .submit {
+    padding-top: 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .submit h4 a {
+    margin-top: 10px;
+    font-size: 18px;
+    float: right;
+    margin-right: 56px;
+  }
+
+  #join_button {
+    margin-top: 10px;
+    float: left;
+    margin-left: 61px;
+  }
+}

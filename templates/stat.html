@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DeepFake 판별 시스템</title>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<link rel="stylesheet" href="../static/css/stat.css" />        
+
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header-wrapper">
+				<div id="header" class="container">
+
+					<!-- Logo -->
+						<h1 id="logo"><a href="/">HOME</a></h1>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							
+						</nav>
+
+				</div>
+
+				
+			</div>
+            <!-- Main -->
+            <div class="wrapper">
+                
+                <div class = "boxGroup" style="margin-top: 50px;">
+                    <h2>2020년 03월 통계 자료</h2>
+                </div>
+				<li>
+					<canvas id="doughnut" style="margin-right: 100px;"></canvas>
+					<canvas id="source"></canvas>
+				</li>
+				<li>
+					<canvas id="tag" style="margin-right: 100px;"></canvas>
+					<canvas id="user"></canvas>
+				</li>
+                
+                
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					
+					<div id="copyright" class="container">
+						<ul class="menu">
+							
+							<li>&copy; COPYRIGHT 2020 가짜를 찾아조. All RIGHT RESERVED.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="../static/js/jquery.min.js"></script>
+			<script src="../static/js/jquery.dropotron.min.js"></script>
+			<script src="../static/js/browser.min.js"></script>
+			<script src="../static/js/breakpoints.min.js"></script>
+			<script src="../static/js/util.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                   $("#nav").load("/nav")
+                });
+			</script>
+			<script>
+				var count = {{count | tojson}};
+				var doughnut = $("#doughnut");
+				var myDoughnutChart = new Chart(doughnut, {
+					type: 'doughnut',
+					data: {
+						labels: ['FAKE','REAL'],
+						datasets: [{
+							label: '# of Votes',
+							data: count,
+							backgroundColor: [
+								'rgba(255, 99, 132)',
+								'rgba(54, 162, 235)',
+							],
+							borderColor: [
+								'rgba(255, 99, 132, 1)',
+								'rgba(54, 162, 235, 1)',
+							],
+						}]
+					},
+					options: {
+						legend : {
+							labels :{
+								fontSize: 18
+							}
+						},
+						responsive: false,
+					
+					}
+				});
+
+				var source_count = {{source_count | tojson}};
+				var source = $("#source");
+				var myChart = new Chart(source, {
+					type: 'bar',
+					data: {
+						labels: ['유튜브','네이버','구글','다음','기타'],
+						datasets: [{
+							data: source_count,
+							backgroundColor: [
+								"rgba(255, 99, 132, 0.7)",
+								'rgba(54, 162, 235, 0.7)',
+								'rgba(255, 206, 86, 0.7)',
+								'rgba(75, 192, 192, 0.7)',
+								'rgba(153, 102, 255, 0.7)',
+							],
+							borderColor: [
+								'rgba(255, 99, 132, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)',
+							],
+							borderWidth: 1
+						}]
+					},
+					options : {
+						title: {
+							display: true,
+							text: '출처 별 통계',
+							fontFamily : "'nanumsquare'",
+							fontSize : 18,
+							position : 'top'
+						},
+						legend: {
+							display: false
+						},
+						responsive: false,
+						scales: {
+							xAxes: [{
+								ticks:{
+									fontSize : 15
+								},
+							}],
+							yAxes: [{
+								ticks: {
+									beginAtZero: true,
+								}
+							}]
+						}
+					}
+				});
+
+				var tag_list = {{tag_lists | tojson}};
+				var tag_count = {{tag_count_lists | tojson}};
+				var tag = $("#tag");
+				var myChart = new Chart(tag, {
+					type: 'bar',
+					data: {
+						labels: tag_list,
+						datasets: [{
+							data: tag_count,
+							backgroundColor: [
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(153, 102, 255, 0.2)',
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(255, 159, 64, 0.2)',
+								'rgba(138, 160, 179, 0.2)',
+								'rgba(208, 205, 107, 0.2)',
+								'rgba(210, 17, 172, 0.2)',
+								'rgba(46, 210, 17, 0.2)'
+							],
+							borderColor: [
+								'rgba(54, 162, 235, 1)',
+								'rgba(153, 102, 255, 1)',
+								'rgba(255, 99, 132, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',                                
+								'rgba(255, 159, 64, 1)',
+								'rgba(138, 160, 179, 1)',
+								'rgba(208, 205, 107, 1)',
+								'rgba(210, 17, 172, 1)',
+								'rgba(46, 210, 17, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						title: {
+							display: true,
+							text: '태그 별 통계',
+							fontFamily : "'nanumsquare'",
+							fontSize : 18,
+							position : 'top'
+						},
+						legend: {
+							display: false
+						},
+						responsive: false,
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero: true
+								}
+							}]
+						}
+					}
+				});
+
+				var age_count = {{age_count | tojson}};
+				var user = $("#user");
+				var myDoughnutChart = new Chart(user, {
+					type: 'line',
+					data: {
+						labels: ['10대', '20대', '30대', '40대', '50대', '60대 이상'],
+						datasets: [{
+							data: age_count,
+							fill : false,
+							pointRadius : 8,
+							pointHoverRadius : 20,
+							backgroundColor: [
+								'rgba(153, 102, 255, 0.9)',
+								'rgba(54, 162, 235, 0.9)',
+								'rgba(255, 206, 86, 0.9)',
+								'rgba(75, 192, 192, 0.9)',
+								'rgba(255, 99, 132, 0.9)',
+								'rgba(255, 159, 64, 0.9)'
+							],
+							borderColor: [
+								'rgba(153, 102, 255, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(255, 99, 132, 1)',
+								'rgba(255, 159, 64, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options : {
+						title: {
+							display: true,
+							text: '연령대 별 사용자 수',
+							fontFamily : "'nanumsquare'",
+							fontSize : 18,
+							position : 'top'
+						},
+						legend: {
+							display: false
+						},
+						responsive: false,
+						scales: {
+							xAxes: [{
+								ticks:{
+									fontSize : 15
+								},
+							}],
+							yAxes: [{
+								
+								ticks: {
+									beginAtZero: true,
+								}
+							}]
+						}
+					}
+				});
+			</script>
+            
+	</body>
+</html>

@@ -1,0 +1,204 @@
+#header-wrapper {
+    position: relative;
+    padding: 4em 0 2em 0;
+    background-image: url(images/main2.png);
+    background-size: 100% 100% auto;
+    background-repeat: repeat;
+}
+
+#content h2, p{
+    text-align: center;
+    font-weight: 700;
+}
+
+header{
+    margin-bottom: 0;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.row > .col-4 {
+    width: 100%;
+}
+
+img{
+    width: 650px;
+    margin : 20px 0 20px 0;
+}
+
+.row{
+    margin-left : 0px;
+}
+
+.row > div{
+    width : 100%
+}
+
+.boxGroup {
+    padding : 0px;
+}
+
+section, article {
+    margin-bottom: 0px;
+}
+
+#myVideo{
+    display: none;
+    width : 100%;
+}
+
+a{
+    border-bottom: 0px;
+}
+
+.button_hover {
+    -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    display: inline-block;
+    color: #f35858;
+    border : solid 1px rgba(243, 88, 88, 0.5);
+    background: none;
+    text-decoration: none;
+    border-radius: 0.35em;
+    padding: 0.8em 2em 0.8em 2em;
+    cursor: pointer;
+    outline: 0;
+    line-height: 1.75em;
+}
+
+.button_hover:hover {
+    -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    display: inline-block;
+    color: inherit;
+    border : solid 1px #c2c7cc;
+    background: none;
+    text-decoration: none;
+    border-radius: 0.35em;
+    padding: 0.8em 2em 0.8em 2em;
+    cursor: pointer;
+    outline: 0;
+    line-height: 1.75em;
+}
+
+.button {
+    -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    display: inline-block;
+    color: inherit;
+    border : solid 1px #c2c7cc;
+    background: none;
+    text-decoration: none;
+    border-radius: 0.35em;
+    padding: 0.8em 2em 0.8em 2em;
+    cursor: pointer;
+    outline: 0;
+    line-height: 1.75em;
+}
+
+input[type ="text"]{
+    background: #f9fbfe;
+    border: solid 1px #d2d7dc;
+    border-radius: 0.35em;
+    width: 100%;
+    display: inline;
+    padding: 0.75em;
+    color: black;
+    line-height: 1.75em;
+    font-size: 15pt;
+}
+
+.url_input{
+    display: none;
+}
+
+.row > * {
+    padding: 20px 0 0 0;
+}
+
+.wrapper {
+    padding: 5em 0 2em 0;
+}
+
+#dropZone{
+outline: 3px dashed #92b0b3;
+width : 1150px;
+margin-left : 10px;
+
+}
+
+@media screen and (max-width: 990px) {
+    img{
+        width: 100%;
+    }
+    #dropZone{
+        width: 94% !important;
+    }
+    .wrapper {
+        padding: 2em 0 5em 0;
+    }
+    #logo a{
+        margin-left:0px;
+    }
+}
+
+form input[type="text"],
+	form input[type="email"],
+	form input[type="password"],
+	form select,
+	form textarea {
+		-moz-transition: background-color 0.25s ease-in-out;
+		-webkit-transition: background-color 0.25s ease-in-out;
+		-ms-transition: background-color 0.25s ease-in-out;
+		transition: background-color 0.25s ease-in-out;
+		-webkit-appearance: none;
+		display: inline;
+		background: #f9fbfe;
+		border: solid 1px #d2d7dc;
+		border-radius: 0.35em;
+		width: 100%;
+		line-height: 1.5em;
+		padding: 0.75em;
+    }
+
+#tag{
+    margin-right : 20px;
+}
+
+
+#tag, #select{
+    width: 150px; 
+    height:40px;
+}
+
+#select{
+    padding-top:5px;
+    padding-bottom:5px
+}
+
+#tag_source{
+    display:none;
+} 
+
+@media screen and (min-width : 400px){
+    #br{
+        display:none;
+    }
+}
+
+@media screen and (max-width : 400px){
+    #br{
+        display:initial;
+    }
+    #tag{
+        margin-right: 0px;
+    }
+}

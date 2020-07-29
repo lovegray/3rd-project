@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DeepFake 판별 시스템</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<link rel="stylesheet" href="../static/css/upload.css" />
+		<link rel="stylesheet" href="../static/css/result.css" />
+        <script>
+			$(document).ready(function(){
+				var mypage = $("#mypage").text();
+			   if(mypage == "  마이페이지"){
+				   console.log(mypage);
+				   $("#board").css("margin-right","10em");
+				}
+
+				let filename = $("#filename").text();
+                console.log(filename);
+                let src = "../static/testMp4/"+filename;
+                console.log(src);
+                $("#video").attr("src",src);
+				$("#video2").attr("src",src);
+                let t_f = $("#t_f").text();
+                console.log(t_f);
+                if(t_f == "가짜영상"){
+                    $("#fake").css("display","inline");
+                } else {
+                    $("#real").css("display","inline");
+                }
+			});
+		</script>
+		<style>
+			#board{
+				margin-right: 18.5em;
+		}
+		</style>
+
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header-wrapper">
+				<div id="header" class="container">
+
+					<!-- Logo -->
+						<h1 id="logo"><a href="/">HOME</a></h1>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/intro"><i class="fas fa-chalkboard-teacher"></i> &nbsp;소개</a></li>
+								<li><a href="#"><i class="fas fa-video"></i> &nbsp;영상 판독</a>
+									<ul>
+										<li><a href="/manual">방법</a></li>
+										<li><a href="/upload">판독하기</a></li>
+									</ul>
+								</li>
+								<li class="break"><a href="/stat"><i class="fas fa-chart-line"></i> &nbsp;통계</a></li>
+								<li id = "board"><a href="/list"><i class="far fa-comments"></i> &nbsp;게시판</a></li>
+								{% if session['login'] %}
+									<li id = "mypage"><a href="/mypage"></i>&nbsp; 마이페이지</a></li>
+									<li><a href="/logout"></i>&nbsp; 로그아웃</a></li>
+								{% else %}
+									<li><a href="/login"><i class="fas fa-unlock"></i>&nbsp; 로그인</a></li>
+								{% endif %}
+							
+							</ul>
+						</nav>
+
+				</div>
+
+				
+			</div>
+			<!-- Main -->
+			<div class="wrapper" style="padding-bottom: 10px;">
+				<!-- <div class="container" id="main"> -->
+					
+
+					<!-- Content -->
+						<article id="content">
+							<header>
+								<h2>결과 확인하기</h2>
+								<p><i class="fas fa-exclamation-triangle"></i> 조작된 영상 유포시 법적인 책임을 물 수 있습니다. <i class="fas fa-exclamation-triangle"></i></p>
+							</header>
+						</article>
+						<div class = "container" id = "back">
+							<!-- 결과 확인  -->
+							<div class = "container" style="width:1200px">
+								<!-- web -->
+								<table id = "web">
+									<tr style="height: 425px; vertical-align: middle;">
+										<td style="width: 50%;font-size: 23px;text-align: left;vertical-align: middle;font-weight: 800;" id = "filename">
+											{{result}}<br>
+											<video id="video" controls style="width: 100%;"></video>
+										</td>
+										<td style="vertical-align: middle; font-size: 30px;font-weight: 800;line-height: 50px;">
+											해당 파일이 <span style="color: #f35858;font-weight: 800;" id = "t_f">{{t_f}}</span>일<br> 확률은
+											<span style="color: #f35858;font-weight: 800;">{{predict}}</span> 입니다.<br>
+											<i class="far fa-frown" id = "fake"></i>
+											<i class="far fa-grin" id = "real"></i>
+										</td>
+									</tr>
+								</table>
+
+								<!-- mobile -->
+								<div class = "boxGroup" id = "mobile">
+									<div class = "box">
+										{{result}}<br>
+										<video id="video2" controls style="width: 100%;"></video>
+									</div>
+									<div class = "box">
+										해당 파일이 <span style="color: #f35858;font-weight: 800;" id = "t_f">{{t_f}}</span>일<br> 확률은
+											<span style="color: #f35858;font-weight: 800;">{{predict}}</span> 입니다.<br>
+											<i class="far fa-frown" id = "fake"></i>
+											<i class="far fa-grin"  id = "real"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="boxGroup" style="margin-top: 40px;">
+							<button type="button" onclick="location.href='/stat' ">통계자료 확인하기</button>
+						</div>
+					<!-- </div> -->
+					<p style="text-align: right;">이 결과는 사실과 다를 수 있으니 법적 책임을 지지 않습니다.</p>
+				</div>
+			</div>
+			<!-- Footer -->
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					
+					<div id="copyright" class="container">
+						<ul class="menu">
+							
+							<li>&copy; COPYRIGHT 2020 가짜를 찾아조. All RIGHT RESERVED.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="../static/js/jquery.min.js"></script>
+			<script src="../static/js/jquery.dropotron.min.js"></script>
+			<script src="../static/js/browser.min.js"></script>
+			<script src="../static/js/breakpoints.min.js"></script>
+			<script src="../static/js/util.js"></script>
+			<script src="../static/js/main.js"></script>
+			
+	</body>
+</html>

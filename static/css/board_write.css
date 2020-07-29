@@ -1,0 +1,109 @@
+#content {
+  margin-bottom: 30px;
+}
+
+.write_box {
+  border: 1px solid #8aa0b3;
+  width: 60%;
+  height: 630px;
+  border-radius: 0.3em;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+#writeform {
+  margin-top: 25px;
+  margin-bottom: 33px;
+}
+
+#id_label {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#writeform li {
+  border-radius: 0.3em;
+  list-style: none;
+  margin-top: 30px;
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: inline-block;
+  margin-right: 5%;
+}
+
+#writeform li label {
+  width: 7%;
+  height: 100%;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: right;
+  font-weight: 600;
+}
+
+#writeform li input[type="text"] {
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#content_box {
+  width: 90%;
+  height: 320px !important;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.submit {
+  margin-top: 292px;
+}
+
+.edit_btn {
+  width: 114px;
+  font-size: 20px;
+}
+
+.edit_btn:hover {
+  background: #fff;
+  color: #8aa0b3;
+  border: 1px solid;
+}
+
+@media (max-width: 600px) {
+  .write_box {
+    width: 85%;
+    height: auto;
+  }
+
+  #writeform {
+    margin-top: 8px;
+  }
+
+  #writeform li {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  #writeform li input[type="text"] {
+    width: 80%;
+  }
+
+  #writeform li label {
+    width: 18%;
+  }
+
+  #writeform li label {
+    margin-right: 0;
+  }
+
+  #id_label {
+    width: 80% !important;
+  }
+}

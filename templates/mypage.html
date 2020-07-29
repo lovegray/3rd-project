@@ -1,0 +1,188 @@
+<!-- <!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>DeepFake 판별 시스템</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+
+	<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+	<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+	<link rel="stylesheet" href="../static/css/main.css" />
+	<link rel="stylesheet" href="../static/css/upload.css" />
+	<link rel="stylesheet" href="../static/css/result.css" />
+	<link rel="stylesheet" href="../static/css/mypage.css" />
+
+</head>
+
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header" class="container">
+
+				<!-- Logo -->
+				<h1 id="logo"><a href="/">HOME</a></h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					
+				</nav>
+
+			</div>
+
+
+		</div>
+		<!-- Main -->
+		<div class="wrapper" style="padding-bottom: 10px;">
+			<!-- Content -->
+			<article id="content">
+				<header>
+					<h2>MY PAGE</h2>
+				</header>
+			</article>
+
+			<div class="boxGroup">
+				<div class="member_box">
+					<h4>회원정보 수정</h4>
+					<div class="edit_member">
+						<form id="editform" name="editform" method="POST" action="">
+							<li>
+								<label>이름</label>
+								<input type="text" name="name">
+							</li>
+							<li>
+								<label>비밀번호</label>
+								<input type="password" name="password">
+							</li>
+							<li>
+								<label>비밀번호 확인</label>
+								<input type="password" name="password_check">
+							</li>
+							<div class="submit">
+								<a href="#" class="edit_btn" onclick="to_ajax()">수정</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="member_box">
+					<h4>이용내역</h4>
+					<div class="edit_member">
+						<div id="history" style="width:100%; height : auto; overflow-x:scroll;white-space:nowrap">
+							<table>
+								<tr id = "video">
+									<!-- 동영상 -->
+									
+								</tr>
+								<tr id = "result">
+									<!-- 결과 -->
+									
+								</tr>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+				<div class="member_box">
+					<h4>문의내역</h4>
+					<div class="edit_member" style="padding : 10px">
+						<div id="board_list" style="height: auto !important;">
+							<table>
+								
+								<tr>
+									<th>no.</th>
+									<th>제목</th>
+									<th>내용</th>
+									<th>답변</th>
+
+								</tr>
+								{% for i in list %}
+                                <tr>
+                                    <td>{{i[0]}}</td>
+                                    <td>{{i[1]}}</td>
+									<td>{{i[3]}}</td>
+									<td style="color : rgb(50, 50, 255);">대기</td>
+                                </tr>
+                                {% endfor %}								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+
+			<div id="copyright" class="container">
+				<ul class="menu">
+
+					<li>&copy; COPYRIGHT 2020 가짜를 찾아조. All RIGHT RESERVED.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/jquery.dropotron.min.js"></script>
+	<script src="../static/js/browser.min.js"></script>
+	<script src="../static/js/breakpoints.min.js"></script>
+	<script src="../static/js/util.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		   $("#nav").load("/nav")
+		});
+	 </script>  
+	<script>
+		function to_ajax() {
+		  var queryString = $("form[name=editform]").serialize();
+		  $.ajax({
+			type: 'post',
+			url: '/mypage',
+			data: queryString,
+			dataType: 'json',
+			success: function (res) {
+			  if (res.status == "fail") {
+				alert("비밀번호를 확인해주세요.");
+			  } else {
+				alert("수정이 완료되었습니다.");
+				window.location.href = "/mypage";
+			  }
+			},
+		  });
+		}
+
+		var video = $("#video");
+		var result = $("#result");
+		var video_list = {{ video_list | tojson }};
+		var result_list = {{ result_list | tojson }};
+
+		let html = "";
+		for(let i = 0; i<video_list.length; i ++){
+			let file_name = video_list[i];
+			let src = "../static/testMp4/" + file_name;
+			html += "<td><video controls src = " + src + "></video></td>";
+		}
+		video.append(html);
+
+		let html_result = "";
+		for(let i = 0; i<result_list.length; i++){
+			let file_name = video_list[i];
+			let result_name = result_list[i];
+			html_result += "<td>"+ file_name + " - <span>" +result_name +"<span></td>";
+		}
+		result.append(html_result);
+
+	  </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+insert into user(id, name, password, age, sex) values ('ayoung','김아영','1111',20,'여성');
+insert into user(id, name, password, age, sex) values ('hangil','김한길','4444',30,'남성');
+insert into user(id, name, password, age, sex) values ('riapark','박리아','2222',30,'여성');
+insert into user(id, name, password, age, sex) values ('younghakim','김영하','3333',30,'여성');
+
+
+insert into board(title, id, content) values ('게시판 이외에 개발자와 연락하는 방법이 있나요?','hangil','딥페이크 판별 시스템을 만든 개발자와 연락하고 싶은데.. 게시판 이외에 다른 연락 수단은 없나요?');
+insert into board(title, id, content) values ('영상 업로드할 때 출처 선택부문 문의드려요','younghakim','영상 판독 버튼 눌러서 업로드할 때에 출처를 선택하게끔 되어있는데요 제가 입력하고 싶은 출처정보가 기존에 나와있는 선택지에 없을 때는 어떻게 입력하면 되나요? 옵션에 기타라고 있던데 기타를 선택하면 되나요? 궁금합니다. 빠른 답변 부탁드립니다.');
+insert into board(title, id, content) values ('업로드 내역 확인','ayoung','업로드 내역을 확인하고 싶습니다.');
+insert into board(title, id, content) values ('통계에 관해 문의 드립니다.','riapark','통계에서 보여지는 자료는 계정 별 통계인가요? 전체 사용자의 통계인가요?');
+insert into board(title, id, content) values ('영상 업로드','ayoung','업로드는 어떻게 하나요?');

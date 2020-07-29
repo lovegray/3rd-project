@@ -1,0 +1,51 @@
+table{
+    text-align: center;
+}
+
+#fake, #real{
+    font-size: 240px;
+    display: none;
+}
+.box{
+    display:inline-block;
+    /* font-weight: bold;
+    padding-top: 0px; */
+}
+
+#back{
+    width : 100%;
+    background: #f6f8fb url("../css/images/image-wrapper.svg");
+    height : 475px;
+    vertical-align: middle;
+    padding-top:25px;
+}
+
+/* web */
+@media screen and (min-width : 400px){
+    #mobile {
+        display : none;
+    }
+    
+}
+
+/* mobile */
+@media screen and (max-width : 400px){
+    #web{
+        display : none;
+    }
+    #mobile{
+        display : initial;
+        width : 100% !important;
+        font-size: 20px;
+    }
+    
+    #back{
+        height : 328px;
+        text-align: center;
+    }
+    
+    #fake, #real{
+        font-size: 150px;
+    }
+}
+

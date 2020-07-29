@@ -1,0 +1,204 @@
+.clear {
+  clear: both;
+} /* clear float */
+
+/*end reset*/
+.img {
+  background-image: url(images/2.png);
+  height: 864px;
+}
+
+.wrapper {
+  padding: 0 0 0 0;
+}
+
+.formbox {
+  width: 800px;
+  height: 630px;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  margin-top: 31px;
+  border-radius: 0.3em;
+}
+
+.formhead {
+  padding: 2em 0;
+}
+
+.formhead h1 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 23px;
+  font-weight: bold;
+}
+
+#joinform li {
+  border-radius: 0.3em;
+  list-style: none;
+  margin-bottom: 30px;
+  background-color: rgba(200, 200, 200, 0.2);
+  position: relative;
+  width: 60%;
+  display: inline-block;
+}
+
+#joinform ul {
+  position: relative;
+  width: 480px;
+  height: 60px;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+#joinform li input[type="text"],
+#joinform li select {
+  padding: 0.5em 2em 0.5em 1em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#joinform li input[type="password"] {
+  padding: 0.5em 2em 0.5em 1em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: auto;
+}
+
+#joinform li input[type="text"]:hover,
+#joinform li select:hover {
+  color: #8aa0b3;
+}
+
+#joinform li input[type="password"]:hover {
+  color: #8aa0b3;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+input:hover::-webkit-input-placeholder {
+  color: #8aa0b3 !important;
+}
+
+#joinform li > i {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#age {
+  width: 48% !important;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+#sex {
+  width: 48% !important;
+  position: absolute;
+  top: 0px;
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+select {
+  text-align: center;
+  text-align-last: center;
+}
+option {
+  text-align: center;
+}
+
+
+/*************************/
+
+.boxGroup {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.join_btn {
+  color: #fff;
+  font-weight: 900;
+  width: 300px;
+  font-size: 20px;
+  background: #8aa0b3;
+  border: 2px;
+  height: 66px;
+  -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  display: inline-block;
+  border-radius: 0.35em;
+  padding: 0.8em 2em 0.8em 2em;
+  cursor: pointer;
+  outline: 0;
+}
+
+
+.join_btn:hover {
+  background: #fff;
+  color: #8aa0b3;
+  border: 2px;
+}
+
+@media (max-width: 600px) {
+  .formbox {
+    width: 300px !important;
+    margin: 0;
+  }
+
+  .img {
+    background-image: url(images/joinphone.png);
+    height: 800px;
+  }
+
+  #joinform {
+    width: 300px !important;
+  }
+
+  #joinselect {
+    width: 180px !important;
+  }
+
+  #sex {
+    width: 100% !important;
+  }
+
+  #age {
+    width: 100% !important;
+  }
+
+  #joinform li input[type="text"],
+  #joinform li input[type="password"] {
+    width: 80%;
+  }
+
+  .submit {
+    padding-top: 4em;
+    display: inline-block;
+  }
+
+  .join_btn {
+    width: 105px;
+    font-size: 17px;
+    height: 50px;
+    display: inline-block;
+    padding: 12px 0 0 0;
+  }
+}

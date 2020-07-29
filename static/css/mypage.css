@@ -1,0 +1,185 @@
+.box{
+    display:inline-block;
+}
+
+.boxGroup{
+    display: inline-block;
+}
+
+table{
+    text-align: center;
+}
+
+#content{
+    margin-bottom: 30px;
+}
+
+.member_box{
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.member_box h4{
+    font-weight: 750;
+    font-size: 20px;
+    color: #52575c;
+    width: 140px;
+    display: inline-block;
+    position: absolute;
+    top:5px;
+    left: 45.5%;
+    background-color: white;
+}
+
+.edit_member{
+    border: 2px dashed rgba(138, 160, 179, 0.836);
+    width: 60%;
+    border-radius: 0.3em;
+    display: inline-block;
+    margin-top: 21px;
+}
+
+#editform{
+    margin-top: 50px;
+    margin-bottom: 33px;
+}
+
+#editform li {
+    border-radius: 0.3em;
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 15%;
+    position: relative;
+    width: 60%;
+    height: 50px;
+  }
+
+#editform li label{
+    width: 26%;
+    height: 100%;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: right;
+    font-weight: 600;
+}
+
+#editform li input[type="text"]{
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#editform li input[type="password"]{
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: auto;
+}
+
+.submit{
+    margin-top:30px;
+    width: 30%;
+    float: left;
+    margin-left: 36%;
+    margin-bottom: 27px;
+}
+
+.edit_btn {
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+    padding: 5px 0px;
+    width: 95px;
+    font-size: 18px;
+    background: #8aa0b3;
+    border: 1px solid;
+    height: 40px;
+    -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    display: inline-block;
+    border-radius: 0.35em;
+    margin-right: 20px;
+  }
+
+  .edit_btn:hover {
+    background: #fff;
+    color: #8aa0b3;
+     border: 1px solid;
+    }
+
+  #history{
+    background-image: url(images/video.JPG);
+    height: 250px;
+    border-radius: 0.3em;
+  }
+
+  #board_list{
+    height: 250px;
+    border-radius: 0.3em;
+  }
+
+video{
+    margin : 40px 20px 10px 0px;
+    width : 310px;
+}
+
+#result span{
+  color : #f35858;
+}
+
+#board_list table{
+    margin-top : 10px;
+    width : 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    line-height: 1.5;
+    border-top: 1px solid rgba(138, 160, 179, 0.836);
+}
+#board_list th{
+    padding: 10px;
+    font-weight: 800;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(138, 160, 179, 0.836);
+    background-color: rgba(138, 160, 179, 0.836);
+    color : white;
+}
+#board_list td{
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(138, 160, 179, 0.836);
+    height : 50px;
+}
+
+#board_list tr:hover{
+    background-color: rgba(165, 190, 212, 0.836);
+    color : white;
+}
+
+@media screen and (max-width: 990px) {
+    .edit_member{
+        width : 100%;
+    }
+    #editform li{
+        margin-left : 0px;
+        width : 100%;
+    }
+    .member_box h4 {
+        left : 25.5%;
+    }
+    #editform li input[type="text"], #editform li input[type="password"] {
+        width : 60%;
+        right : 17px;
+    }
+}

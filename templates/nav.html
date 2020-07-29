@@ -1,0 +1,34 @@
+<ul>
+    <li><a href="/intro"><i class="fas fa-chalkboard-teacher"></i> &nbsp;소개</a></li>
+    <li><a href="#"><i class="fas fa-video"></i> &nbsp;영상 판독</a>
+        <ul>
+            <li><a href="/manual">방법</a></li>
+            <li><a href="/upload">판독하기</a></li>
+        </ul>
+    </li>
+    <li class="break"><a href="/stat"><i class="fas fa-chart-line"></i> &nbsp;통계</a></li>
+    <li id = "board"><a href="/list"><i class="far fa-comments"></i> &nbsp;게시판</a></li>
+    {% if session['login'] %}
+        <li id = "mypage"><a href="/mypage"></i>&nbsp; 마이페이지</a></li>
+        <li><a href="/logout"></i>&nbsp; 로그아웃</a></li>
+    {% else %}
+        <li><a href="/login"><i class="fas fa-unlock"></i>&nbsp; 로그인</a></li>
+    {% endif %}
+
+</ul>
+<style>
+    #board{
+	    margin-right: 18.5em;
+}
+</style>
+<script src="../static/js/main.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+       var mypage = $("#mypage").text();
+       if(mypage == "  마이페이지"){
+           console.log(mypage);
+           $("#board").css("margin-right","10em");
+        }
+    });
+</script>  
